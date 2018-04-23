@@ -102,6 +102,8 @@ class Xsread:
         if dir_name is '':
             print('路径不能为空！')
 
+        print('files', os.listdir(dir_name))
+
         if os.path.isdir(dir_name):
             # 目录
             files = os.listdir(dir_name)
@@ -124,7 +126,7 @@ class Xsread:
                 self._dir_list(dir_name + '/' + file)
 
         else:
-            print(dir_name, 'is not folder, ', os.path.isdir(dir_name))
+            print('dir folder ', dir_name, 'is not folder, ', os.path.isdir(dir_name))
             pass
 
 
