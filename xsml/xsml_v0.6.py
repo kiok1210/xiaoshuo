@@ -52,7 +52,7 @@ class Xsread:
         # 初始化创建 电子书根目录 与小说目录平级
         # self.root_dzs_mod_path = self.root_read_path.rstrip(self.root_rela_path) + "Yao's电子书/"
         # 从绝对路径变为相对路径，部署中web服务器上
-        self.root_dzs_mod_path = "dzs/"
+        self.root_dzs_mod_path = "/dzs/"
         # 先删除，再创建
         self._drop_folder(self.root_dzs_mod_path)
         # 复制模板到电子书根目录
