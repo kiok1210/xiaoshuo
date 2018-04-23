@@ -89,6 +89,7 @@ class Xsread:
            :type path: object
         """
 
+        path = str(path).replace('\n', '')
         path = os.path.normpath(path)
 
         # linun 直接把''变成点了,直接空默认为root
