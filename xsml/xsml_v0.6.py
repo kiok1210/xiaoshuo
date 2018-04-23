@@ -89,6 +89,7 @@ class Xsread:
            :type path: object
         """
 
+        path = os.path.normpath(path)
 
         if '' is path:
             dir_name = self.root_read_path
