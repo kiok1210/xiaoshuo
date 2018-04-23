@@ -50,7 +50,7 @@ class Xsread:
         self.root_rela_path = arr[len(arr) - 1]
 
         # 初始化创建 电子书根目录 与小说目录平级
-        self.root_dzs_mod_path = self.root_read_path.rstrip(self.root_rela_path) + "/Yao's电子书/"
+        self.root_dzs_mod_path = self.root_read_path.rstrip(self.root_rela_path) + "Yao's电子书/"
         # 先删除，再创建
         self._drop_folder(self.root_dzs_mod_path)
         # 复制模板到电子书根目录
@@ -74,7 +74,10 @@ class Xsread:
 
     @staticmethod
     def __read_file(path):
-        list_mod = open(path, 'r', encoding='utf-8')
+        try:
+            list_mod = open(path, 'r', encoding='utf-8')
+        except:
+            list_mod = open(path, 'r', encoding='gbk')
         list_html = list_mod.readlines()
         list_mod.close()
         return list_html
@@ -86,10 +89,16 @@ class Xsread:
            :type path: object
         """
 
+
         if '' is path:
             dir_name = self.root_read_path
         else:
             dir_name = path
+
+        print('dir_name', dir_name)
+
+        if dir_name is '':
+            print('路径不能为空！')
 
         if os.path.isdir(dir_name):
             # 目录
@@ -110,8 +119,6 @@ class Xsread:
                 # 递归遍历文件目录
                 self._dir_list(dir_name + '/' + file)
 
-                # t = MyThread(self._dir_list, (dir_name + '/' + file, time_), self._dir_list.__name__)
-                # self.threads.append(t)
         else:
             pass
 
