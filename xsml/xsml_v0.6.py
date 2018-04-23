@@ -93,7 +93,7 @@ class Xsread:
 
         # linun 直接把''变成点了,直接空默认为root
         if 'root' is path:
-            dir_name = self.root_read_path
+            dir_name = os.path.join(self.root_read_path)
         else:
             dir_name = path
 
