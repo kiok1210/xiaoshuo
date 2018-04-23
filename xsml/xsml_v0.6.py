@@ -32,7 +32,7 @@ class Xsread:
         self.mod_path = path  # 模板路径
         self.list_mod_path = self.mod_path + '/list_mod.html'
         self.con_mod_path = self.mod_path + '/con_mod.html'
-        self.md_file = 'data_path.md'  # 小说根目录绝对路径
+        self.md_file = 'data_path.conf'  # 小说根目录绝对路径
 
         # 初始化读取配置文件 第一行数据
         self.root_read_path = self.__read_file(self.md_file)[0]
