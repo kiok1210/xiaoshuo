@@ -82,7 +82,7 @@ class Xsread:
         list_mod.close()
         return list_html
 
-    def _dir_list(self, path='', time_=2):
+    def _dir_list(self, path='root', time_=2):
         """
            递归遍历小说目录，创建HTML电子书
            :type time_: object 线程休眠时间
@@ -91,7 +91,8 @@ class Xsread:
 
         path = os.path.normpath(path)
 
-        if '' is path:
+        # linun 直接把''变成点了,直接空默认为root
+        if 'root' is path:
             dir_name = self.root_read_path
         else:
             dir_name = path
@@ -125,6 +126,8 @@ class Xsread:
         else:
             print(dir_name, 'is not folder, ', os.path.isdir(dir_name))
             pass
+
+
 
     def _create_list_mod(self, json_data, time_):
 
@@ -303,7 +306,7 @@ class Xsread:
             date = datetime.now()
             print('all begin ', ctime(), '开始生成！')
 
-            self._dir_list('', 2)
+            self._dir_list('root', 2)
 
             now2 = int(time.time())
             print('now2', now2)
