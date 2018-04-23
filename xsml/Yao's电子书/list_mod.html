@@ -1,0 +1,39 @@
+<!doctype>
+<html>
+    <head>
+        <title>  ${file_name}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" type="text/css" href=" ${root_path}css/biquge.css"/>
+        <script type="text/javascript" src=" ${root_path}js/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>-->
+        <script type="text/javascript" src=" ${root_path}js/bqg.js"></script>
+
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="content_read">
+                <div class="box_con">
+                    <div class="con_top">
+                        ${tree_path}
+                    </div>
+                    <div class="bookname">
+                        <h1> ${file_name}</h1>
+                        <!-- 作品名称 -->
+                    </div>
+                    <div id="list">
+                        <dl>
+                             <!-- 章节列表 -->
+                            ${files}
+                        </dl>
+                     </div>
+                </div>
+                <div class="con_bot">
+                        ${tree_path}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

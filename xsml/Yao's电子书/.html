@@ -1,0 +1,56 @@
+<!doctype>
+<html>
+    <head>
+        <title>  xs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" type="text/css" href="css/biquge.css"/>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>-->
+        <script type="text/javascript" src="js/bqg.js"></script>
+        <!--引用的CSS-->
+        ${source_css}
+         <!--引用的JS-->
+        ${source_js}
+        <script type="text/javascript">
+            var preview_page = "${preview_page}";
+            var next_page = "${next_page}";
+            var index_page = "${index_page}";
+            var article_id = "${article_id}";
+            var chapter_id = "${chapter_id}";
+            function jumpPage() {
+                var event = document.all ? window.event : arguments[0];
+                if (event.keyCode == 37)
+                    document.location = preview_page;
+                if (event.keyCode == 39)
+                    document.location = next_page;
+                if (event.keyCode == 13) document.location = index_page;
+            }
+          document.onkeydown=jumpPage;
+        </script>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="content_read">
+                <div class="box_con">
+                    <div class="con_top">
+                        ${tree_path}
+                        <a href="/">小说网</a> &gt; <a href="/jingpinxiaoshuo/">作者</a> &gt; <a href="/jingpinxiaoshuo/">作品名</a>
+                    </div>
+                    <div class="bookname">
+                        <h1> xs</h1>
+                        <!-- 作品名称 -->
+                    </div>
+                    <div id="list">
+                        <dl>
+                             <!-- 章节列表 -->
+                            <dd><a href="list_122h" >122h</a></dd><dd><a href="list_zhumengren" >筑梦人</a></dd>
+                        </dl>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
