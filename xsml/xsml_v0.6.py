@@ -89,7 +89,6 @@ class Xsread:
            :type path: object
         """
 
-        path = str(path).replace('\n', '')
         path = os.path.normpath(path)
 
         # linun 直接把''变成点了,直接空默认为root
@@ -103,7 +102,10 @@ class Xsread:
         if dir_name is '':
             print('路径不能为空！')
 
-        print('files', os.listdir(dir_name))
+        print('file exists', os.path.exists(dir_name))
+        print('file isfile', os.path.isfile(dir_name))
+        print('file isabs', os.path.isabs(dir_name))
+        print('file isdir', os.path.isdir(dir_name))
 
         if os.path.isdir(dir_name):
             # 目录
