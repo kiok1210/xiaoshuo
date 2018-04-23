@@ -122,6 +122,7 @@ class Xsread:
                 self._dir_list(dir_name + '/' + file)
 
         else:
+            print(dir_name, 'is not folder, ', os.path.isdir(dir_name))
             pass
 
     def _create_list_mod(self, json_data, time_):
