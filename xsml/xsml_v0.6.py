@@ -50,7 +50,9 @@ class Xsread:
         self.root_rela_path = arr[len(arr) - 1]
 
         # 初始化创建 电子书根目录 与小说目录平级
-        self.root_dzs_mod_path = self.root_read_path.rstrip(self.root_rela_path) + "Yao's电子书/"
+        # self.root_dzs_mod_path = self.root_read_path.rstrip(self.root_rela_path) + "Yao's电子书/"
+        # 从绝对路径变为相对路径，部署中web服务器上
+        self.root_dzs_mod_path = "dzs/"
         # 先删除，再创建
         self._drop_folder(self.root_dzs_mod_path)
         # 复制模板到电子书根目录
@@ -131,8 +133,6 @@ class Xsread:
         else:
             print('dir folder ', dir_name, 'is not folder, ', os.path.isdir(dir_name))
             pass
-
-
 
     def _create_list_mod(self, json_data, time_):
 
