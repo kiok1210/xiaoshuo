@@ -104,6 +104,8 @@ class Xsread:
             # 目录
             files = os.listdir(dir_name)
 
+            print(files)
+
             # 文件名排序
             files = self.bubble_sort(files)
 
